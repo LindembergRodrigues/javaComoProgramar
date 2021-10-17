@@ -1,7 +1,8 @@
 package funcionarios;
 
 public class Salaried extends Employee{
-    double salarioFixo;
+    private double salarioFixo;
+
     Salaried(String nome, String sobrenome, String numeroSocil, double salarioFixo){
         super(nome,sobrenome,numeroSocil);
         this.salarioFixo = salarioFixo;
