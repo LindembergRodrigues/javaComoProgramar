@@ -23,11 +23,9 @@ public class Hourly extends Employee {
         this.valorHora = valorHora;
     }
 
-    public void  setHoras(double horas) throws InterruptedException {
+    public void  setHoras(double horas) {
         if(horas >=0 ) {
             this.horas = horas;
-        }else{
-            throw  new IllegalArgumentException();
         }
     }
 
@@ -44,7 +42,8 @@ public class Hourly extends Employee {
     @Override
     public String toString() {
         return super.toString()+
-                "Valor das Horas: " + valorHora+
-                "Total de Horas: "+ horas;
+                "\nValor das Horas: " + valorHora+
+                "\nTotal de Horas: "+ horas+
+                "\nTotal: " + calcLucros();
     }
 }

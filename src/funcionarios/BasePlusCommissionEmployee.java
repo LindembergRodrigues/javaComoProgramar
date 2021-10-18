@@ -1,13 +1,12 @@
 package funcionarios;
 
-public class BasePlusCommissionEmployee extends  Employee {
+public class BasePlusCommissionEmployee extends  CommissionEmployee {
     private double salBase;
-    private double vendas;
 
-    BasePlusCommissionEmployee(String nome, String sobrenome, String numeroSocial, double salBase, double vendas){
-        super(nome,sobrenome,numeroSocial);
+
+    BasePlusCommissionEmployee(String nome, String sobrenome, String numeroSocial, double vendas,double salBase){
+        super(nome,sobrenome,numeroSocial,0.1,vendas);
         this.salBase = salBase;
-        this.vendas = vendas;
     }
 
     public double getSalBase() {
@@ -18,24 +17,15 @@ public class BasePlusCommissionEmployee extends  Employee {
         this.salBase = salBase;
     }
 
-    public double getVendas() {
-        return vendas;
-    }
-
-    public void setVendas(double vendas) {
-        this.vendas = vendas;
-    }
-
     @Override
     public double calcLucros() {
-        return (vendas * 0.1) + salBase;
+        return super.calcLucros();
     }
 
     @Override
     public String toString(){
         return super.toString()+
                 "\nSalário Base: " + salBase+
-                "\nVendas: " + vendas+
-                "\nComissão: " + (vendas*0.1);
+                "\nTotal: " + (salBase + calcLucros());
     }
 }

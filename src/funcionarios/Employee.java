@@ -47,9 +47,10 @@ public abstract class Employee {
 
 
     public abstract double calcLucros();
+
     public String toString(){
         return "\n" + getNome() + " " + getSobrenome()+
-                "\n*Numero social: " + getNumeroDoSeguroSocial();
+                "\nNumero social: " + getNumeroDoSeguroSocial();
     }
 
 }

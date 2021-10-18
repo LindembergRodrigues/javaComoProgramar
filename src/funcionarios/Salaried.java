@@ -1,29 +1,29 @@
 package funcionarios;
 
 public class Salaried extends Employee{
-    private double salarioFixo;
+    private double salarioSemanal;
 
-    Salaried(String nome, String sobrenome, String numeroSocil, double salarioFixo){
+    Salaried(String nome, String sobrenome, String numeroSocil, double salarioSemanal){
         super(nome,sobrenome,numeroSocil);
-        this.salarioFixo = salarioFixo;
+        this.salarioSemanal = salarioSemanal;
     }
 
-    public double getSalarioFixo() {
-        return salarioFixo;
+    public double getSalarioSemanal() {
+        return salarioSemanal;
     }
 
-    public void setSalarioFixo(double salarioFixo) {
-        this.salarioFixo = salarioFixo;
+    public void setSalarioSemanal(double salarioFixo) {
+        this.salarioSemanal =salarioSemanal;
     }
 
     @Override
     public double calcLucros() {
-        return getSalarioFixo();
+        return getSalarioSemanal();
     }
 
     @Override
     public  String toString(){
         return super.toString() +
-                "\nSalário Fixo: " + getSalarioFixo();
+                "\nPagamento da Semana: " + getSalarioSemanal();
     }
 }
